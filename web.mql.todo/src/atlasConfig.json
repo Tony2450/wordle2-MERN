@@ -1,0 +1,9 @@
+{
+    "appId": "application-0-tzegb",
+    "appUrl": "https://realm.mongodb.com/groups/65282a08556eb9192d43289a/apps/652965c51af8a573fad655fc",
+    "baseUrl": "https://realm.mongodb.com",
+    "clientApiBaseUrl": "https://us-east-1.aws.realm.mongodb.com",
+    "dataApiBaseUrl": "https://us-east-1.aws.data.mongodb-api.com",
+    "dataExplorerLink": "https://cloud.mongodb.com/links/65282a08556eb9192d43289a/explorer/WordleProject/database/collection/find",
+    "dataSourceName": "mongodb-atlas"
+}

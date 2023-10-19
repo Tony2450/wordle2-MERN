@@ -57,7 +57,7 @@ export function WelcomePage() {
         await app.emailPasswordAuth.registerUser({ email, password });
       }
       await app.logIn(Realm.Credentials.emailPassword(email, password));
-      navigate("/user/wordle-clone");
+      navigate("/wordle2-MERN/user/wordle-clone");
     } catch (err) {
       handleAuthenticationError(err, setError);
     }

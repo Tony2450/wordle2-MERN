@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 import {
   Container,
-  Button,
-  Typography,
-  List,
   LinearProgress,
 } from "@mui/material";
 import { useStats } from "../hooks/useStats";

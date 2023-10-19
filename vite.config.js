@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react";
 import topLevelAwait from "vite-plugin-top-level-await";
 
 export default defineConfig({
+  base: "/wordle2-MERN",
   plugins: [react(), topLevelAwait()],
   build: {
     outDir: "build",

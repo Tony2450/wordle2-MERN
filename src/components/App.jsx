@@ -1,4 +1,3 @@
-import { AppBar, Toolbar, Button, Typography } from "@mui/material";
 import { WelcomePage } from "./WelcomePage";
 import { UserStatsPage } from "./UserStatsPage";
 import { AppProvider, useApp } from "./RealmApp";
@@ -25,13 +24,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/user" element={<ProtectedLayout />}>
+        <Route path="/wordle2-MERN/user" element={<ProtectedLayout />}>
           <Route path="wordle-clone" element={<Wordle />} />
           <Route path="rules" element={<Rules />} />
           <Route path="userstats" element={<UserStatsPage />} />
         </Route>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<WelcomePage />} />
+        <Route path="/wordle2-MERN" element={<Layout />}>
+          <Route path="/wordle2-MERN" element={<WelcomePage />} />
           <Route path="rules" element={<Rules />} />
         </Route>
       </Routes>

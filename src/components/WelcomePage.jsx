@@ -16,7 +16,6 @@ import { MoreInfoDocsLink } from "./MoreInfo";
 import { toggleBoolean } from "../utils";
 import { useErrorAlert } from "../hooks/useErrorAlert";
 import { useNavigate, Navigate } from "react-router-dom";
-import { useStats } from "../hooks/useStats_mql";
 
 export function WelcomePage() {
   const app = useApp();

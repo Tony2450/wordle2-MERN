@@ -1,7 +1,10 @@
 # My Wordle Clone v2
 
+## Intro
 
-This project is a React based implementation of the game Wordle. It also includes functional user authentication,
+Wordle is a popular online word guessing game where players attempt to guess a five-letter word by submitting guesses and receiving feedback on whether each letter is correct, incorrect, or in the correct position. This addictive game has gained a massive following due to its simple yet engaging gameplay and its ability to test and improve players' vocabulary and problem-solving skills.
+
+This project is a React based implementation of the game Wordle made for academic purposes. It also includes functional user authentication,
 and allows users to track their stats.
 
 The web app itself connects to Atlas App Services using [Remote MongoDB Queries](https://mongodb.com/docs/realm/web/mongodb/) from the Realm SDK.
@@ -21,7 +24,6 @@ To run the app locally, install its dependencies and then call the run script:
 
 The client uses a metadata file, ``src/atlasConfig.json``, to configure
 its connection to Atlas App Services.
-
 
 ## React Components
 
@@ -48,6 +50,8 @@ Most of the game logic is coded in this jsx as well. The game board is stored in
 
 By far the largest function is the onEnter function, which checks the word that the user submits for its correctness. This function could have likely been split up into smaller functions, but I have decided to keep it as is for now.
 
+It functions by first checking if a 5-letter word was submitted. Otherwise, it prompts the user to input a 5 letter word. It then checks if the word is real. This is done via an API call to a word API using RapidAPI. If the word is real, it then checks each letter for its correctness. If the letter is not in the wordle, it labels it a wrong guess in state. Otherwise, if the word is elsewhere or correct, it labels it as such in state. The game state is then updated to reflect the current attempt number and a Game Over check is made (the app checks if you correctly guessed the wordle or if you are out of attempts).
+
 It uses the custom hook useStats that is in the hooks folder to communicate with the MongoDb database and update user data when the user wins or loses.
 
 ### useStats, useStats_mql.jsx, useCollection
@@ -60,7 +64,7 @@ Rules: this page is a summary of the rules of the game for new players, it is ac
 
 UserStatsPage: this is a small page to display user stats. Future implementations of new stats can easily be added to this page using the useStats hook. There is not much actual business logic in this component since most of it is conveniently handled by the useStats hook, the logic is simply in the rendering of the component.
 
-WelcomePage: this page is inherited in full from the template provided by MongoDb, it allows users to sign up and log in. It also addresses errors in signup or login directly on the page and displays error messages to the user so that they know what went wrong.
+WelcomePage: this page is inherited from the template provided by MongoDb, it allows users to sign up and log in. It also addresses errors in signup or login directly on the page and displays error messages to the user so that they know what went wrong.
 
 ## Hosting
 
@@ -69,4 +73,16 @@ WelcomePage: this page is inherited in full from the template provided by MongoD
 The app is hosted on GitHub Pages, but gh pages does not natively support React apps that handle routing clientside. Therefore, I used a solution available at [this page](https://github.com/rafgraph/spa-github-pages#readme) on Github. For the way this solution works and why it is necessary read the README.md included on that page for reference.
 
 To visit the hosted version of the app, click on [this link](https://tony2450.github.io/wordle2-MERN).
+
+## Some issues, drawbacks and future plans
+
+Some issues currently are that the actual word selection is done via an API call. This is the only part of the game that requires a stable internet connection. For players with a slow connection, this can slow down the game significantly. Given that the rest of the game is clientside, it would be interesting to set up a larger local word bank of 5 letter words for both the wordle selection process as well as the checking if the submitted word is real.
+
+Of note, useWatch and the util-hooks in the hooks folder are unused in the actual app. As well, there is a createObjectId helper function in utils.js that is unused. This creates some clutter in the codebase and increases folder size. I have chosen to leave them in for now in case i need to use them in future updates. The createObjectId and user data document creation is actually handled directly in the MongoDb app management using some custom code that I wrote to activate on user creation.
+
+Another drawback is that, as it stands, the user stats page is somewhat barebones and does not display much useful information for new users. This could be solved in future updates by adding dropdown menus and statistics that are queried from the entire user base to give the user an idea of their standing compared to other players as well as which words are considered most or least difficult.
+
+Finally future plans include potentially adding options for other languages, fleshing out the user stats, as well as refactoring some of the code and adding clearer comments to the codebase.
+
+Another addition could be more robust user authentication functionalities. Such as sending users a confirmation email. And allowing users to modify their password or resetting their password if it is forgotten.
 

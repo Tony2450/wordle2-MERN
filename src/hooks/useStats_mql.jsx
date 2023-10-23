@@ -1,9 +1,7 @@
 import React from "react";
-import { useWatch } from "./useWatch";
 import { useCollection } from "./useCollection";
 import { useApp } from "../components/RealmApp";
 import atlasConfig from "../atlasConfig.json";
-import { createObjectId } from "../utils";
 
 const { dataSourceName } = atlasConfig;
 

@@ -1,4 +1,4 @@
-# My Wordle Clone v2
+# Wordle! v2
 
 ## Video
 
@@ -8,7 +8,7 @@ Here is a [link](https://youtu.be/K8BLg-l89-Q) to a video demonstration of the a
 
 Wordle is a popular online word guessing game where players attempt to guess a five-letter word by submitting guesses and receiving feedback on whether each letter is correct, incorrect, or in the correct position. This addictive game has gained a massive following due to its simple yet engaging gameplay and its ability to test and improve players' vocabulary and problem-solving skills.
 
-This project is a React based implementation of the game Wordle made for academic purposes. It also includes functional user authentication,
+This project is a React based implementation of the game Wordle. It also includes functional user authentication,
 and allows users to track their stats.
 
 The web app itself connects to Atlas App Services using [Remote MongoDB Queries](https://mongodb.com/docs/realm/web/mongodb/) from the Realm SDK.

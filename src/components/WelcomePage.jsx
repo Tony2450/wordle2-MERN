@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import { MoreInfoDocsLink } from "./MoreInfo";
 import { toggleBoolean } from "../utils";
 import { useErrorAlert } from "../hooks/useErrorAlert";
 import { useNavigate, Navigate } from "react-router-dom";

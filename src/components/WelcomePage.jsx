@@ -79,8 +79,8 @@ export function WelcomePage() {
           </Typography>
           <Typography variant="subtitle1" gutterBottom>
             {isSignup
-              ? "Enter your email and a password to create a new account."
-              : "Enter your email and a password to log in with an existing account."}
+              ? "Enter a username and a password to create a new account."
+              : "Enter your username and password to log in with an existing account."}
           </Typography>
           <NonAuthErrorAlert />
           <TextField
@@ -138,7 +138,6 @@ export function WelcomePage() {
           </button>
         </form>
       </Card>
-      <MoreInfoDocsLink />
     </Container>
   );
 }
